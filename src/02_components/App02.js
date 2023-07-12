@@ -11,7 +11,7 @@ const App02 = () => {
   };
 
   return (
-    <div>
+    <div className='App02'>
         <h1>Hello World</h1>
         <h2>Hi {myName} 🖐🏻</h2>
         <h3>Hi {handleNameChange()} !</h3>
