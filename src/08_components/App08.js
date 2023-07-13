@@ -9,17 +9,17 @@ const App08 = () => {
       {
           id: 1,
           checked: false,
-          item: `Hoodie`,
+          item: `Apples`,
       },
       {
           id: 2,
           checked: false,
-          item: `Jacket`,
+          item: `Bananas`,
       },
       {
           id: 3,
           checked: false,
-          item: `T-Shirt`,
+          item: `Oranges`,
       },
   ]);
 
