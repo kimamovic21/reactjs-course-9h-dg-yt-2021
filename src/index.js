@@ -9,7 +9,11 @@ import ReactDOM from 'react-dom/client';
 // import App07 from './07_components/App07';
 // import App08 from './08_components/App08';
 // import App09 from './09_components/App09';
-import App10 from './10_components/App10';
+// import App10 from './10_components/App10';
+// import App11 from './11_components/App11';
+// import App12 from './12_components/App12';
+// import App13 from './13_components/App13';
+import App14 from './14_components/App14';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -23,6 +27,10 @@ root.render(
     {/* <App07 /> */}
     {/* <App08 /> */}
     {/* <App09 /> */}
-    <App10 />
+    {/* <App10 /> */}
+    {/* <App11 /> */}
+    {/* <App12 /> */}
+    {/* <App13 /> */}
+    <App14 />
   </React.StrictMode>
 );

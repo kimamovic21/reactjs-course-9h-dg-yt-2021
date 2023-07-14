@@ -188,4 +188,72 @@ Chapter 10: Project Challenge
 -u color dodajemo ternarni operator
 -u Input.jsx komponenti, kreiramo button element sa type atributom i onClick dogadajem
 -u onClick dogadaj proslijedujemo vrijednost anonimne funkcije
+
+
+Chapter 11: useEffect() React hook
+-u App.js fajl importujemo useEffect()
+-kreiramo useEffect(() => { ... }, [])
+-u App.js fajlu, dodajemo u useState() dodajemo || [] u slucaju da je JSON.parse(...) vrijednost nula
+-brisemo funkciju setAndSaveItems i u funkcijama ispod dodajemo setItems umjesto setAndSaveItems
+
+
+Chapter 12: JSON server
+-kreiramo data folder
+-u data folderu kreiramo db.json fajl
+-u db.json fajlu kreiramo json objekt sa items nizom
+-u terminal ukucamo npx json-server -p 3500 -w data/db.json
+-u drugum terminalu pokrenemo React projekt
+
+
+Chapter 13: Fetch API data
+-u App.js fajlu kreiramo API_URL varijablu
+-u useEffect() React hook, unutar callback funkcije, kreiramo fetchItems asinhronu funkciju
+-u fetchItems funkciji kreiramo try - catch blokove koda
+-u try bloku koda kreiramo response i listItems varijable
+-u try blok koda dodajemo setItems(listItems)
+-u catch blok koda dodajemo console.error()
+-pozivamo fetchItems funkciju
+-kreiramo const [fetchError, setFetchError] = useState(false)
+-u try blok koda dodajemo if (!response.ok)
+-u if uslov dodajemo throw Error()
+-u try blok koda dodajemo setFetchError(null)
+-u catch blok koda dodajemo setFetchError(error.message)
+-u App.js fajlu, u return izjavi kreiramo main element
+-u App.js fajlu, u return izjavi, dodajemo uslov fetchError && (...)
+-u return izjavi dodajemo uslov !fetchError && (...)
+-u useEffect() kreiramo setTimeout funkciju
+-kreiramo const [isLoading, setIsLoading] = useState(true)
+-nakon try - catck bloka koda, dodajemo finally blok koda
+-u finally blok koda dodajemo setIsLoading(false)
+-u main elementu dodajemo uslov isLoading && (...)
+
+
+Chapter 14: CRUD Operations
+-kreiramo apiRequest.js fajl
+-u api Request.js fajlu kreiramo apiRequest asinhronu funkciju sa 3 parametra
+-u funkciju apiRequest dodajemo try - catch - finally blokove koda
+-u try bloku koda kreiramo response varijablu
+-u try bloku koda dodajemo if uslov (!response.ok)
+-u if uslov dodajemo throw Error
+-u catch blok koda dodajemo errMsg
+-u finally blok koda dodajemo return errMsg
+-u App.js fajl importujemo apiRequest
+-u App.js fajlu, u addItem funkciji, kreiramo postOptions objekt
+-funkciji addItem dodajemo async
+-kreiramo result varijablu 
+-dodajemo uslov if(result)
+-u if uslov dodajemo setFetchError(result)
+-u funkciji handleCheck kreiramo myItem varijablu
+-kreiramo updateOptions objekt
+-kreiramo varijablu reqUrl
+-funkciji handleCheck dodajemo async
+-kreiramo varijablu result
+-dodajemo uslov if(result)
+-unutar if uslova dodajemo setFetchError
+-u funkciji handleDelete kreiraamo deleteOptions objekt
+-funkciji handleDelete dodajemo async
+-kreiramo varijablu reqUrl
+-kreiramo result varijablu
+-dodajemo uslov if (result)
+-u if uslov dodajemo setFetchError(result)
 -
