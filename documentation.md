@@ -202,6 +202,7 @@ Chapter 12: JSON server
 -u data folderu kreiramo db.json fajl
 -u db.json fajlu kreiramo json objekt sa items nizom
 -u terminal ukucamo npx json-server -p 3500 -w data/db.json
+u terminal ukucamo json-server --watch data/db.json --port 8000
 -u drugum terminalu pokrenemo React projekt
 
 
@@ -256,4 +257,131 @@ Chapter 14: CRUD Operations
 -kreiramo result varijablu
 -dodajemo uslov if (result)
 -u if uslov dodajemo setFetchError(result)
+
+
+Chapter 15: Fetch Data Challenge
+-u App.js fajlu kreiramo API_URL varijablu
+-kreiramo const [requestType, setRequestType] = useState('users')
+-kreiramo const [items, setItems] = useState([])
+-kreiramo useEffect() React hook
+-u callback funkciji kreiramo funkciju fetchItems
+-u fetchItems funkciji kreiramo try - catch blokove koda
+-u try bloku koda kreiramo varijablu response
+-kreiramo varijablu data
+-kreiramo Form.jsx komponentu 
+-u App.js fajl importujemo Form.jsx komponentu
+-u App.js fajlu, Form komponenti dodajemo prop
+-u Form.jsx komponenti, form elementu dodajemo onSubmit dogadaj
+-u Form.jsx komponenti, Form funkciji dodajemo parametre ({ requestType, setRequestType })
+-onSubmit dogadaju proslijedujemo anonimnu funkciju
+-kreiramo Button.jsx komponentu
+-u Form.jsx komponentu importujemo Button.jsx komponentu
+-komponentama Button dodajemo prop
+-u Button.jsx komponenti dodajemo parametre ({ buttonText, requestType, setRequestType })
+-u Button.jsx komponenti, button elementu dodajemo atribute i onClick dogadaj
+-u onClick dogadaj proslijedujemo vrijednost anonimne funkcije
+-kreiramo List.jsx komponentu
+-u App.js fajl importujemo List.jsx komponentu
+-u App.js fajlu, List komponenti dodajemo prop
+-u List.jsx komponenti, List funkciji dodajemo parametar ({ items })
+-u List.jsx komponenti, unutar ul elementa, dodajemo items.map() metodu
+-kreiramo ListItem.jsx komponentu
+-u List.jsx komponentu importujemo ListItem.jsx komponentu
+-u ListItem.jsx komponenti, ListItem funkciji, dodajemo parametar ({ item })
+-u li elementu, dodajemo JSON.stringify() metodu
+-kreiramo Table.jsx komponentu
+-u App.js fajl immportujemo Table.jsx komponentu
+-u Table.jsx komponentu, Table funkciji dodajemo parametar {(items)}
+-unutar tbody elementa, dodajemo items.map() metodu
+-kreiramo Row.jsx komponentu
+-u Table.jsx komponentu importujemo Row.jsx komponentu
+-funkciji Table dodajemo parametar ({ item })
+-u Row.jsx komponenti, Row funkciji dodajemo parametar ({ item })
+-u tr elementu dodajemo Object.entries() metodu
+-kreiramo Cell.jsx komponentu
+-u Row.jsx komponentu importujemo Cell.jsx komponentu
+-u return izjavi, Cell komponenti dodajemo prop
+-u Cell.jsx komponenti, Cell funkciji dodajemo parametar ({ cellData })
+
+
+Chapter 16: React Router
+-instaliramo biblioteku u terminalu npm i react-router-dom
+-u index.js fajl importujemo react-router komponente
+-u App.js fajl importujemo react-router komponente
+-u App.js fajlu, u return izjavi, Route komponenti dodajemo atribute path i element
+
+
+Chapter 17: Router Hooks and Links
+-u Header.jsx komponenti, Header funkciji dodajemo prop ({title})
+-u App.js fajlu, Header komponenti dodajemo prop title
+-u Navbar.jsx komponenti, Navbar funkciji dodajemo prop ({ search, setSearch})
+-u Navbar.jsx komponenti, form elementi dodajemo onSubmit dogadaj
+-kreiramo label element sa htmlFor atributom
+-kreiramo input element sa vise atributa
+-input elementu dodajemo onChange dogadaj
+-u Navbar.jsx komponentu importujemo Link komponentu
+-kreiramo ul element i unutar njega vise li elemenata
+-unutar li elemenata dodajemo Link komponentu sa atributom to
+-u App.js fajlu kreiramo const [search, setSearch] = useState('')
+-kreiramo  const [posts, setPosts] = useState([ { ... } ])
+-kreiramo const [searchResults, setSearchResults] = useState([])
+-u return izjavi, Navbar komponenti dodajemo props search i setSearch
+-u Route komponenti, unutar element atributa, Home komponenti dodajemo prop posts
+-u Home.jsx komponenti, Home funkciji dodajemo prop ({ posts })
+-kreiramo Feed.jsx komponentu
+-u Home.jsx komponentu importujemo Feed.jsx komponentu
+-dodajemo uslov ternarni operator posts.length
+-u Feed.jsx komponenti, Feed funkciji dodajemo parametar ({ posts })
+-kreiramo Post.jsx komponentu
+-u Feed.jsx komponentu importujemo Post.jsx komponentu
+-u return izjavi dodajemo posts.map metodu
+-u Post.jsx komponentu importujemo Link komponentu
+-u Post.jsx komponenti, Post funkciji dodajemo prop ({ post })
+-u return izjavu kreiramo Link komponentu sa atributom to
+-unutar Link komponente kreiramo h2 i p element
+-ispod Link elementa kreiramo p element
+-unutar p elementa dodajemo ternarni uslov 
+-u PostPage.jsx komponentu importujemo useParams i Link
+-u PostPage.jsx komponenti, PostPage funkciji dodajemo prop ({posts, handleDelete})
+-kreiramo varijablu const { id } = useParams()
+-kreiramo post varijablu
+-u article element dodajemo uslov ako postoji objava {post && ... }
+-kreiramo button element sa onClick dogadajem
+-u App.js fajlu, PostPage komponenti dodajemo prop posts i handleDelete
+-u PostPage.jsx komponentu dodajemo uslov ako objava ne postoji {!post && ... }
+-u App.js fajlu kreiramo handleDelete funkciju
+-u handleDelete funkciji kreiramo postsList varijablu
+-u handleDelete funkciju dodajemo setPosts(postsList)
+-u handleDelete funkciji kreiramo navigate varijablu
+-u App.js fajlu kreiramo const [postTitle, setPostTitle] = useState('')
+-u App.js fajlu kreiramo const [postBody, setPostBody] = useState('')
+-kreiramo handleSubmit funkciju
+-u App.js fajlu, NewPost komponenti dodajemo vise props
+-u NewPost.jsx komponenti, NewPost funkciji dodajemo vise props parametara ({})
+-kreiramo form element sa onSubmit dogadajem
+-unutar onSubmit dogadaja proslijedujemo handleSubmit funkciju
+-kreiramo label element sa htmlFor atributom
+-kreiramo input element sa vise atributa
+-input element dodajemo onChange dogadaj unutar kojeg proslijedujemo anonimnu funkciju
+-kreiramo jos jedan label element sa htmlFor atributom
+-kreiramo textarea element sa vise atributa
+-textarea elementu dodajemo onChange dogadaj unutar kojeg proslijeduejmo vrijednost anonimne funkcije
+-kreiramo button Submit element
+-u App.js fajlu, unutar handleSubmit funkcije, kreiramo id varijablu
+-kreiramo datetime varijablu
+-u terminalu instaliramo paket npm i date-fns
+-u App.js fajl importujemo format komponentu
+-u handleSubmit funkciji kreiramo varijablu objekt newPost
+-kreiramo varijablu niz allPosts 
+-dodajemo setPosts(allPosts)
+-dodajemo setPostTitle('')
+-dodajemo setPostBody('')
+-dodajemo varijablu navigate 
+-u App.js fajlu kreiramo useEffect() React hook
+-u useEffect() React hook, unutar callback funkcije, kreiramo filteredResults varijablu
+-u callback funkciji dodajemo setSearchResults(...)
+-u Missing.jsx komponentu importujemo Link komponentu
+-u return izjavi kreiramo h2 i p elemente
+-u Footer.jsx komponenti kreiramo today varijablu
+-u About.jsx komponeti kreiramo p element
 -
