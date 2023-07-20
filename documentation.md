@@ -384,4 +384,58 @@ Chapter 17: Router Hooks and Links
 -u return izjavi kreiramo h2 i p elemente
 -u Footer.jsx komponenti kreiramo today varijablu
 -u About.jsx komponeti kreiramo p element
--
+
+
+Chapter 18: Flexbox Components
+-uredivanje css fajla
+
+
+Chapter 19: Axios API Request
+-kreiramo axios_data folder i unutar njega db.json fajl
+-u terminalu instaliramo biblioteku axios npm i axios
+-kreiramo  const [posts, setPosts] = useState([])
+-kreiramo api folder i unutar njega posts.jsx komponentu
+-u posts.jsx komponentu importujemo axios biblioteku
+-eksportujemo axios.create({ ... })
+-u terminalu pokrenemo json server - npx json-server -p 3500 -w axios_data/db.json
+-u App.js fajl importujemo api
+-kreiramo jos jedan useEffect() React hook
+-u useEffect(), unutar callback funkcije, kreiramo fetchPosts asinhronu funkciju
+-u fetchPosts funkciju, kreiramo try - catch blokove koda
+-u try bloku koda kreiramo response varijablu
+-u try blok koda dodajemo setPosts
+-u catch blok koda dodajemo else uslov
+-funkciji handleSubmit dodajemo async
+-u funkciju handleSubmit dodajemo try - catch blok koda
+-u try blok koda kreiramo response varijablu
+-funkciji handleDelete dodajemo async
+-u funkciju handleDelete dodajemo try - catch blokove koda
+-kreiramo handleEdit asinhronu funkciju sa parametrom id
+-kreiramo const [editTitle, setEditTitle] = useState('')
+-kreiramo const [editBody, setEditBody] = useState('')
+-u handleEdit funkciji kreiramo varijable datetime i updatedPost 
+-kreiramo try - catch blokove koda
+-u try blok koda kreiramo response varijablu
+-u try blok koda dodajemo setPosts
+-u setPosts dodajemo posts.map metodu
+-u try blok koda dodajemo setEditTitle(''), setEditBody('') i navigate('/')
+-kreiramo novu komponentu EditPost.jsx
+-u EditPost.jsx komponentu importujemo useParams i Link komponente
+-funkciji EditPost dodajemo parametre props ({ ... })
+-kreiramo id i post varijable
+-post varijable dodajemo posts.find() metodu
+-kreiramo useEffect() React hook
+-u useEffect() React hook, unutar callback funkcije dodajemo uslov if (post)
+-u if uslovu dodajemo setEditTitle i setEditBody
+-u return izjavi dodajemo uslov {editTitle && ( ... )}
+-form elementu dodajemo onSubmit dogadaj
+-input elementima dodajemo atribute i dogadaje
+-button elementu dodajemo onClick dogadaj
+-u App.js fajl importujemo EditPost.jsx komponentu
+-u App.js fajlu, kreiramo komponentu Route sa atributima path='/edit:id' i element
+-element atributu dodajemo EditPost komponentu
+-komponenti EditPost dodajemo vise props
+-u EditPost.jsx komponentu dodajemo uslov {!editTitle && ( ... )}
+-u PostPage.jsx komponenti, u uslovu {post && ...} kreiramo Link komponentu
+-u komponenti Link kreiramo button element Edit Post
+

@@ -17,7 +17,9 @@ import ReactDOM from 'react-dom/client';
 // import App15 from './15_components/App15';
 import { BrowserRouter as Router } from 'react-router-dom';
 // import App16 from './16_components/App16';
-import App17 from './17_components/App17';
+// import App17 from './17_components/App17';
+// import App18 from './18_components/App18';
+import App19 from './19_components/App19';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -39,7 +41,9 @@ root.render(
     {/* <App15 /> */}
     {/* <App16 /> */}
     <Router>
-      <App17 />
+      {/* <App17 /> */}
+      {/* <App18 /> */}
+      <App19 />
     </Router>
   </React.StrictMode>
 );

@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "My 1st post",
+      "datetime": "July 17, 2023 12:17:00 PM",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+      "id": 2,
+      "title": "My 2nd post",
+      "datetime": "July 18, 2023 12:18:00 PM",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in justo pharetra ante auctor sollicitudin. Curabitur id libero vitae ligula dictum vestibulum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur varius nulla sit amet arcu blandit mollis vel pretium tellus."
+    },
+    {
+      "id": 3,
+      "title": "My 3rd post",
+      "datetime": "July 19, 2023 12:19:00 PM",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id velit odio. Curabitur non tristique nisi. Aliquam erat volutpat. Sed eget augue ut arcu placerat mattis. Donec eros magna, tristique eu ullamcorper at, egestas nec elit. Phasellus turpis lectus, efficitur non risus cursus, sollicitudin finibus ante. Nunc non neque egestas, convallis tellus a, sagittis eros. Fusce et mi sed eros varius tristique."
+    },
+    {
+      "id": 4,
+      "title": "My 4th post",
+      "datetime": "July 20, 2023 12:20:00 PM",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lobortis libero a felis finibus tempus. Sed tempor et neque at porta. Cras vestibulum, massa in elementum luctus, purus velit egestas turpis, eu auctor turpis massa eu nunc. Suspendisse in justo eget eros dictum iaculis ut et ligula."
+    }
+  ]
+}
