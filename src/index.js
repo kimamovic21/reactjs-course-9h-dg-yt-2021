@@ -19,7 +19,12 @@ import { BrowserRouter as Router } from 'react-router-dom';
 // import App16 from './16_components/App16';
 // import App17 from './17_components/App17';
 // import App18 from './18_components/App18';
-import App19 from './19_components/App19';
+// import App19 from './19_components/App19';
+// import App20 from './20_components/App20';
+// import App21 from './21_components/App21';
+import { StoreProvider } from 'easy-peasy';
+import store from './22_components/store';
+import App22 from './22_components/App22';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -40,10 +45,17 @@ root.render(
     {/* <App14 /> */}
     {/* <App15 /> */}
     {/* <App16 /> */}
-    <Router>
+    {/* <Router> */}
       {/* <App17 /> */}
       {/* <App18 /> */}
-      <App19 />
-    </Router>
+      {/* <App19 /> */}
+      {/* <App20 /> */}
+      {/* <App21 /> */}
+    {/* </Router> */}
+    <StoreProvider store={store}>
+      <Router>
+          <App22 />
+      </Router>
+    </StoreProvider>
   </React.StrictMode>
 );

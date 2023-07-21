@@ -439,3 +439,148 @@ Chapter 19: Axios API Request
 -u PostPage.jsx komponenti, u uslovu {post && ...} kreiramo Link komponentu
 -u komponenti Link kreiramo button element Edit Post
 
+
+Chapter 20: Custom React Hooks
+-kreiramo hooks folder
+-u hooks folderu kreiramo useWindowSize.jsx komponentu
+-u useWindowSize.jsx komponenti kreiramo const [windowSize, setWindowSize] = useState({ ... })
+-kreiramo useEffect() React hook
+-u useEffect() React hook, unutar callback funkcije, kreiramo handleResize funkciju
+-u handleResize funkciju dodajemo setWindowSize({ ... })
+-u useEffect(), unutar callback funkcije pozivamo handleResize funkciju
+-window objektu dodajemo addEventListener
+-kreiramo cleanUp funkciju
+-u cleanUp funkciji dodajemo window.removeEventListener
+-u callback funkciju dodajemo return cleanUp
+-u return izjavi od useWindowSize funkcije dodajemo windowSize
+-u App.js fajl importujemo useWindowSize
+-kreiramo const { width, height } = useWindowSize()
+-u return izjavi, komponenti Header dodajemo prop width
+-u Header.jsx komponenti importujemo React ikonice
+-u funkciji Header, dodajemo parametar prop width
+-u return izjavi dodajemo ternarni uslov za pojavljivanje ikonica kada se velicina ekrana smanjuje ili povecava
+-u hooks folderu kreiramo useAxiosFetch.jsx komponentu sa parametrom dataUrl
+-u useAxiosFetch.jsx komponenti kreiramo tri useState()
+-kreiramo useEffect() React hook
+-u useEffect() React hook, unutar callback funkcije kreiramo varijablu isMounted
+-kreiramo varijablu source
+-kreiramo fetchData asinhronu funkciju
+-u fetchData funkciju dodajemo setIsLoading
+-kreiramo try - catch - finally blokove koda
+-u try blok koda kreiramo varijablu response
+-dodajemo uslov if(isMounted)
+-u if uslov dodajemo setData i setFetchError
+-u catch blok koda dodajemo uslov if(isMounted)
+-u if uslov dodajemo setFetchError i setData
+-u finally blok koda dodajemo uslov isMounted && ... 
+-pozivamo fetchData funkciju
+-kreiramo cleanUp funkciju
+-u cleanUp funkciju dodajemo isMounted = false i source.cancel()
+-u return izjavi od funkcije useAxiosFetch dodajemo data, fetchError i isLoading
+-u App.js fajl importujemo useAxiosFetch komponentu
+-u App.js fajl dodajemo const { data, fetchError, isLoading } = useAxiosFetch(...)
+-brisemo prvi useEffect()
+-kreiramo novi useEffect() i unutar callback funkcije dodajemo setPosts(data)
+-u App.js fajlu, u Route sa Home komponentom, Home komponenti dodajemo props fetchError i isLoading
+-u Home.jsx komponenti, funkciji Home dodajemo parametar props fetchError i isLoading
+-u return izjavi dodajemo uslov {isLoading && ... }
+-dodajemo uslov {!isLoading && fetchError && ... }
+-dodajemo uslov {!isLoading && !fetchError && ... }
+
+
+Chapter 21: Context API & useContext Hook
+-kreiramo context folder
+-kreiramo DataContext.jsx komponentu
+-u DataContext.jsx komponenti kreiramo varijablu DataContext 
+-eksportujemo funkciju DataProvider sa parametrom children
+-u funkciju DataProvider, unutar return izjave, dodajemo DataContext.Provider komponentu
+-komponenti DataContext.Provider dodajemo prop value
+-u prop value dodajemo width
+-unutar komponente DataContext.Provider dodajemo children
+-u App.js fajl importujemo komponentu DataProvider
+-u App.js fajlu, unutar return izjave, dodajemo komponentu DataProvider
+-prebacujemo vise stvari iz App.js u DataContext.jsx komponentu
+-u Header.jsx komponenti, Header funkciji ostavljamo samo title kao parametar prop
+-importujemo useContext React hook
+-importujemo DataContext.jsx komponentu
+-kreiramo varijablu const { width } = useContext(DataContext)
+-u App.js fajlu, Header komponenti brisemo prop width
+-u Navbar.jsx komponentu importujemo useContext React hook
+-importujemo DataContext.jsx komponentu
+-funkciji Navbar brisemo parametre props
+-kreiramo const { search, setSearch } = useContext(DataContext)
+-u App.js fajlu, komponenti Navbar brisemo props
+-u DataContext.jsx komponenti, unutar DataContext.Provider, u prop value dodajemo 
+search, setSearch,  searchResults, fetchError, isLoading
+-u Home.jsx komponentu importujemo useContext React hook
+-importujemo DataContext.jsx komponentu
+-u funkciji Home brisemo parametre props-
+-kreiramo const { searchResults, fetchError, isLoading } = useContext(DataContext)
+-u App.js fajlu, komponenti Home brisemo props
+-u NewPost.jsx komponentu importujemo useContext React hook
+-importujemo DataContext.jsx komponentu
+-u funkciji NewPost brisemo parametre props
+-kreiramo const { handleSubmit, postTitle, setPostTitle, postBody, setPostBody } = useContext(DataContext)
+-u DataContext.jsx komponenti, unutar DataContext.Provider, prop value dodajemo 
+handleSubmit, postTitle, setPostTitle, postBody, setPostBody
+-u App.js fajlu, komponenti EditPost brisemo props
+-u EditPost.jsx komponentu importujemo useContext React hook
+-importujemo DataContext.jsx komponentu
+-u EditPost funkciji brisemo parametre props
+-kreiramo const { posts, handleEdit, editBody, setEditBody, editTitle, setEditTitle} = useContext(DataContext)
+-u DataContext.jsx komponenti, unutar DataContext.Provider, prop value dodajemo 
+posts, handleEdit, editBody, setEditBody, editTitle, setEditTitle
+-u PostPage.jsx komponentu importujemo useContext React hook
+-importujemo DataContext.jsx komponentu
+-u funkciji PostPage brisemo parametre props
+-kreiramo const { posts, handleDelete } = useContext(DataContext)
+-u DataContext.jsx komponenti, unutar DataContext.Provider, prop value dodajemo handleDelete
+-u App.js fajlu, komponenti PostPage brisemo props
+-u Header.jsx komponentu importujemo useWindowSize komponentu
+-kreiramo const { width } = useWindowSize()
+-u NewPost.jsx komponenti kreiramo const { posts, setPosts } = useContext(DataContext)
+-kreiramo handleSubmit funkciju
+-kreiramo varijablu navigate
+-u PostPage.jsx komponenti kreiramo handleDelete funkciju
+-kreiramo const { posts, setPosts } = useContext(DataContext)
+-kreiramo varijablu navigate
+-u EditPage.jsx komponenti kreiramo const { posts, setPosts } = useContext(DataContext)
+-kreiramo handleEdit funkciju
+-kreiramo navigate varijablu
+
+
+Chapter 22: Easy Peasy Redux
+-u terminalu instaliraom biblioteku Easy Peasy Redux - npm install easy-peasy
+-kreiramo store.jsx komponentu
+-u store.jsx komponenti importujemo funkcije iz biblioteke easy-peasy
+-eksportujemo funkciju createStore
+-kreiramo stanja i funkcije koje ce da mijenjaju ta stanja
+-kreiramo postCount funkciju
+-kreiramo getPostById funkciju
+-kreiramo savePost funkciju
+-kreiramo deletePost funkciju
+-kreiramo editPost funkciju
+-u index.js fajl importujemo StoreProvider komponentu
+-importujemo store.jsx komponentu
+-komponenti StoreProvider dodajemo store={store}
+-u App.js fajl importujemo useStoreActions
+-u Navbar.jsx komponentu importujemo useStoreState i useStoreActions
+-kreiramo varijable posts, search, setSearch i setSearchResults
+-kreiramo useEffect() React hook
+-u Home.jsx komponentu importujemo useStoreState
+-u funkciji Home dodajemo parametre props isLoading i fetchError
+-kreiramo const { searchResults } = useStoreState((state) => state.searchResults)
+-u PostPage.jsx komponentu importujemo useStoreState i useStoreActions
+-kreiramo deletePost, getPostById i post varijable
+-u handleDelete funkciju dodajemo funkciju deletePost(id)
+-u NewPost.jsx komponentu importujemo useStoreState i useStoreActions
+-kreiramo posts, postTitle i postBody varijable
+-kreiramo savePost, setPostTitle i setPostBody funkcije
+-u funkciju handleSubmit dodajemo savePost(newPost)
+-u komponentu EditPost.jsx importujemo useStoreState i useStoreActions
+-kreiramo varijable posts, editTitle i editBody
+-kreiramo funkcije editPost, setEditTitle i setEditBody
+-kreiramo varijable getPostById i post 
+-u handleEdit funkcije dodajemo editPost(updatedPost)
+-u Footer.jsx komponentu importujemo useStoreState
+-kreiramo postCount varijablu
