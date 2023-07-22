@@ -584,3 +584,13 @@ Chapter 22: Easy Peasy Redux
 -u handleEdit funkcije dodajemo editPost(updatedPost)
 -u Footer.jsx komponentu importujemo useStoreState
 -kreiramo postCount varijablu
+
+
+Chapter 23: Build and Deploy Your React Apps
+-postavljanje aplikacije na netlify
+-u terminalu instaliramo biblioteku za Github pages npm i gh-pages -D
+-u package.json objekt dodajemo homepage
+-u scripts objekt dodajemo predeploy i deploy
+-u terminal ukucamo git init
+-u terminal ukucamo npm run deploy
+-
