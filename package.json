@@ -1,7 +1,7 @@
 {
   "name": "reactjs-course-9h-dg-yt-2021",
   "version": "0.1.0",
-  "homepage": "https://kimamovic21.github.io/react_deploy_gh",
+  "homepage": "https://kimamovic21.github.io/reactjs-course-9h-dg-yt-2021",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
