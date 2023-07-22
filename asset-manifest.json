@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/react_deploy_gh/static/css/main.c38d8146.css",
-    "main.js": "/react_deploy_gh/static/js/main.1daa9f36.js",
-    "index.html": "/react_deploy_gh/index.html",
-    "main.c38d8146.css.map": "/react_deploy_gh/static/css/main.c38d8146.css.map",
-    "main.1daa9f36.js.map": "/react_deploy_gh/static/js/main.1daa9f36.js.map"
+    "main.css": "/reactjs-course-9h-dg-yt-2021/static/css/main.c38d8146.css",
+    "main.js": "/reactjs-course-9h-dg-yt-2021/static/js/main.1daa9f36.js",
+    "index.html": "/reactjs-course-9h-dg-yt-2021/index.html",
+    "main.c38d8146.css.map": "/reactjs-course-9h-dg-yt-2021/static/css/main.c38d8146.css.map",
+    "main.1daa9f36.js.map": "/reactjs-course-9h-dg-yt-2021/static/js/main.1daa9f36.js.map"
   },
   "entrypoints": [
     "static/css/main.c38d8146.css",
